@@ -3,6 +3,7 @@ const template = document.getElementById("template");
 const fragment = new DocumentFragment();
 const btnes = document.querySelectorAll(".card .btn")
 
+const carritosObjeto = [];
 
 const agregarAllCarrito = (e) =>{
 
@@ -12,20 +13,28 @@ const agregarAllCarrito = (e) =>{
         cantidad : 1
     }
 
-    if (carritosObjeto.hasOwnProperty(producto.titulo)) {
-        producto.cantidad = carritosObjeto[producto.titulo].cantidad +1;
-    }
+    const indice = carritosObjeto.findIndex(
+        (item) => item.id === producto.id
+    );
 
+      console.log(indice);  
 
-    carritosObjeto[producto.titulo] = producto
-    pintarCarrito()
+      if (indice === -1) {
+        carritosObjeto.push(producto);
+      }else{
+        carritosObjeto[indice].cantidad ++
+      }
+
+      console.log(carritosObjeto); 
+
+    pintarCarrito(carritosObjeto)
 };
 
-    const pintarCarrito = () => {
+    const pintarCarrito = (array) => {
    
         carrito.textContent = "";
 
-        Object.values(carritosObjeto).forEach(item =>{
+        array.forEach((item) =>{
 
             const clone = template.content.firstElementChild.cloneNode(true);
 

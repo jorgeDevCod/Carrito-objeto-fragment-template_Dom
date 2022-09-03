@@ -18,9 +18,4 @@ boton.addEventListener("click", () => {
     boton.style.background = "black";
     boton.textContent = "Editar todo";
 })
-boton2.addEventListener("click", () => {
-    console.log("has dado click aqui 2" );
-    h1.textContent = "Imprimiendo en el DOM";
-    h1.style.color = "#0b5ed7";
-    boton.style.background = "#0d6efd";
-})
+

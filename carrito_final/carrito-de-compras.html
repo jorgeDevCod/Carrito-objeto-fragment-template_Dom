@@ -23,8 +23,7 @@
                         </p>
                         <button class="btn btn-outline-primary"
                         data-fruta ="fresa"
-                        data-precio = "
-                        ">
+                        data-precio = "300">
                             Agregar
                         </button>
                     </div>
@@ -40,7 +39,8 @@
                             $100
                         </p>
                         <button class="btn btn-outline-primary"
-                        data-fruta ="platano">
+                        data-fruta ="platano"
+                        data-precio = "100">
                             Agregar
                         </button>
                     </div>
@@ -56,7 +56,8 @@
                             $200
                         </p>
                         <button class="btn btn-outline-primary"
-                        data-fruta ="manzana">
+                        data-fruta ="manzana"
+                        data-precio = "200">
                             Agregar
                         </button>
                     </div>
@@ -68,7 +69,9 @@
 
     <!-- Canasta de productos del carritos -->
     <section class="container mt-3">
-        <ul class="list-group" id="carrito"> </ul>
+        <ul class="list-group" id="carrito"> 
+
+        </ul>
     </section>
 
 
@@ -81,7 +84,7 @@
                         Total $
                         <span>1500</span>
                     </p>
-                    <button class="btn btn-outline-primary">
+                    <button class="btn btn-outline-info">
                         Finalizar compras
                     </button>
                 </div>
@@ -91,15 +94,36 @@
 
 
     <template id="template">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span class="lead ">
-                Fresa
-            </span>
-            <span class="badge bg-primary rouded-pill">
+        
+        <li class="list-group-item bg-secondary text-white">
+            <span class="badge bg-primary rouded-pill
+            align-middle">
                 12
             </span>
+            <span class="lead align-middle">
+                Fresa
+            </span>
+            
+        </li>
+        
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <div>
+                <p class="lead mb-0">Total: $ 
+                    <span></span>
+                </p>
+            </div>
+            <div>
+                <button class=".btn btn-sm btn-danger"
+>
+                    Quitar
+                </button>
+                <button class=".btn btn-sm btn-success">
+                    Agregar
+                </button>
+            </div>
         </li>
     </template>
+    
     <script src="carrito-de-compras.js"></script>
 </body>
 </html>

@@ -22,6 +22,7 @@ document.addEventListener("click",(e) => {
    
     btnEliminar(e)
   }
+  
 
 });
 
@@ -84,22 +85,6 @@ const pintarCarrito = () => {
 }
 
 
-const pintarFooter = () => {
-  console.log("pintar footer");
-  footer.textContent = "";
-
-  const total = carritosObjeto.reduce(
-     (acc, current) => acc + current.cantidad * current.precio,
-      0
-     )
-
-  const clone = templateFooter.content.cloneNode(true);
-  clone.querySelector(" span").textContent = total;
-     
-
-  footer.appendChild(clone)
-}
-
 const btnAgregar = (e) => {
   console.log("cliqueaste", e.target.dataset.id);
   carritosObjeto = carritosObjeto.map(item =>{
@@ -132,3 +117,19 @@ const btnEliminar = (e) => {
 }
 
 
+const pintarFooter = (e) => {
+  console.log("pintar footer");
+  footer.textContent = "";
+
+  const total = carritosObjeto.reduce(
+     (acc, current) => acc + current.cantidad * current.precio,
+      0
+     )
+
+  const clone = templateFooter.content.cloneNode(true);
+  clone.querySelector(" span").textContent = total;
+     
+  footer.appendChild(clone);
+
+  
+}

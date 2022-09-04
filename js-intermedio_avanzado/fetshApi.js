@@ -1,3 +1,5 @@
+// Bases de fetch
+/*
 const url =  "https://jsonplaceholder.typicode.com/posts/"
 
 // fetch(url)
@@ -19,3 +21,11 @@ const findPostById = async(id) => {
     }
 }
 findPostById(6);
+*/
+
+
+const url = "https://pokeapi.co/api/v2/pokemon/ditto";
+const name = 
+fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data.forms[0].name));

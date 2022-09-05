@@ -21,7 +21,7 @@ const fetchData = async () => {
     }
 };
 
-
+//Pintar el loading
 const loadingData = (estado) => {
     const loading = document.querySelector("#loading");
     if (estado) {
@@ -33,7 +33,7 @@ const loadingData = (estado) => {
 
 
 const pintarDatos = (data) => {
-    const fragment = document.createDocumentFragment();
+    const fragment = new DocumentFragment();
 
     cards.textContent = "";
 
@@ -43,6 +43,7 @@ const pintarDatos = (data) => {
         clone.querySelector("p").textContent = item.species;
         clone.querySelector("img").setAttribute("src", item.image);
 
+        //Se guarda en el fragment para evitar reflow
         fragment.appendChild(clone);
     });
     cards.appendChild(fragment);
